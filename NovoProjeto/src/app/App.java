@@ -2,24 +2,32 @@ package app;
 
 import java.util.Locale;
 import java.util.Scanner;
-import entities.Product;
+import entities.*;
 
 public class App {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner read = new Scanner(System.in);
 
-        Product product = new Product();
+        Aluno aluno = new Aluno();
 
-        System.out.println("Enter product data:");
-        System.out.print("Name:");
-        product.name = read.nextLine();
-        System.out.print("Price:");
-        product.price = read.nextDouble();
-        System.out.print("Quantity is stock:");
-        product.quantity = read.nextInt();
+        System.out.println("Entre com os dados do aluno:");
+        System.out.print("Nome:");
+        aluno.nome = read.nextLine();
+        System.out.print("Nota 1:");
+        aluno.nota1 = read.nextDouble();
+        System.out.print("Nota 2:");
+        aluno.nota2 = read.nextDouble();
+        System.out.print("Nota 3:");
+        aluno.nota3 = read.nextDouble();
 
-        System.out.println("Name: " + product.name + ", Price: " + product.price + ", Quantity:  " + product.quantity);
+        System.out.printf("FINAL GRADE: %.2f%n", aluno.nota());
+        if (aluno.nota() < 60.0) {
+            System.out.println("Failed");
+            System.out.printf("Missing %.2f Points%n", aluno.result());
+        } else {
+            System.out.println("Pass");
+        }
 
         read.close();
     }
