@@ -2,32 +2,19 @@ package app;
 
 import java.util.Locale;
 import java.util.Scanner;
-import entities.*;
+import util.*;
 
 public class App {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner read = new Scanner(System.in);
 
-        Aluno aluno = new Aluno();
+        System.out.print("Entre com preço do dolar:");
+        double dolarValue = read.nextDouble();
+        System.out.print("Entre com o valor em dolares:");
+        double dolarQuantity = read.nextDouble();
 
-        System.out.println("Entre com os dados do aluno:");
-        System.out.print("Nome:");
-        aluno.nome = read.nextLine();
-        System.out.print("Nota 1:");
-        aluno.nota1 = read.nextDouble();
-        System.out.print("Nota 2:");
-        aluno.nota2 = read.nextDouble();
-        System.out.print("Nota 3:");
-        aluno.nota3 = read.nextDouble();
-
-        System.out.printf("FINAL GRADE: %.2f%n", aluno.nota());
-        if (aluno.nota() < 60.0) {
-            System.out.println("Failed");
-            System.out.printf("Missing %.2f Points%n", aluno.result());
-        } else {
-            System.out.println("Pass");
-        }
+        System.out.printf("Amount to be paid in reais = %.2f%n", CurrentyValue.valor(dolarValue, dolarQuantity));
 
         read.close();
     }
