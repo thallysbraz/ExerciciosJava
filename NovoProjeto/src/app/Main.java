@@ -11,7 +11,10 @@ public class Main {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
+
         double initSaldo = 0.0;
+        double balance = 0.0;
+        Conta cont;
 
         System.out.println("Entre com os dados da conta");
 
@@ -33,39 +36,36 @@ public class Main {
             initSaldo = sc.nextDouble();
         }
 
-        Conta cont = new Conta(numberConta, name, initSaldo); // Iniciando conta
+        cont = new Conta(numberConta, name, initSaldo); // Iniciando conta
 
         // mostrando dados da conta
-        System.out.println("numberConta: " + cont.getNumberConta());
-        System.out.println("Name: " + cont.getName());
-        System.out.println("Saldo: $" + cont.getSaldo());
+        print(cont.getNumberConta(), cont.getName(), cont.getSaldo());
 
         // adicionando saldo
         System.out.print("Enter a deposit value: ");
-        double balance = sc.nextDouble();
-
+        balance = sc.nextDouble(); // lendo o valor do deposito
         cont.addSaldo(balance);
-
-        System.out.println("Updated account deposit data: ");
-        System.out.println("numberConta: " + cont.getNumberConta());
-        System.out.println("Name: " + cont.getName());
-        System.out.println("Saldo: $" + cont.getSaldo());
+        print(cont.getNumberConta(), cont.getName(), cont.getSaldo());
 
         // removendo saldo
         System.out.print("Enter a withdraw value: ");
-        balance = sc.nextDouble();
-
+        balance = sc.nextDouble(); // lendo valor do saque
         cont.removeSaldo(balance);
-
-        System.out.println("Updated account withdraw data: ");
-        System.out.println("numberConta: " + cont.getNumberConta());
-        System.out.println("Name: " + cont.getName());
-        System.out.println("Saldo: $" + cont.getSaldo());
+        print(cont.getNumberConta(), cont.getName(), cont.getSaldo());
 
         // finalizando programa
-
         sc.close();
+    }
 
+    public static void print(int number, String name, double saldo) {
+        System.out.println();
+        System.out.println("Updated account data: ");
+
+        String teste = "numberConta: " + number + "\n" + "Name: " + name + "\n" + "Saldo Disponivel: "
+                + String.format("%.2f", saldo);
+
+        System.out.println(teste);
+        System.out.println();
     }
 
 }
