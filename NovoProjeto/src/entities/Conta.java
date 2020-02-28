@@ -6,10 +6,10 @@ public class Conta {
     private String name;
     private double saldo;
 
-    public Conta(int numberConta, String name, double saldo) {
+    public Conta(int numberConta, String name, double initSaldo) {
         this.numberConta = numberConta;
         this.name = name;
-        this.saldo = saldo;
+        addSaldo(initSaldo);
     }
 
     public int getNumberConta() {
@@ -33,7 +33,7 @@ public class Conta {
     }
 
     public void removeSaldo(double balance) {
-        this.saldo = (this.saldo - (balance + 5));
+        this.saldo -= (balance + 5);
     }
 
 }

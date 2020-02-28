@@ -33,7 +33,7 @@ public class Main {
             saldo = sc.nextDouble();
         }
 
-        Conta cont = new Conta(numberConta, name, saldo);// iniciando conta
+        Conta cont = new Conta(numberConta, name, saldo); // Iniciando conta
 
         // mostrando dados da conta
         System.out.println("numberConta: " + cont.getNumberConta());
@@ -61,6 +61,8 @@ public class Main {
         System.out.println("numberConta: " + cont.getNumberConta());
         System.out.println("Name: " + cont.getName());
         System.out.println("Saldo: $" + cont.getSaldo());
+
+        // finalizando programa
 
         sc.close();
 
