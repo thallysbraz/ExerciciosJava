@@ -11,29 +11,29 @@ public class Main {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        double saldo = 0.0;
+        double initSaldo = 0.0;
 
         System.out.println("Entre com os dados da conta");
 
         System.out.print("Enter account number: ");
         int numberConta = sc.nextInt();
 
-        sc.nextLine();
+        sc.nextLine(); // nextLine pra limpar o buffer
 
         System.out.print("Enter account holder: ");
         String name = sc.nextLine();
 
-        System.out.print("Is there na initial deposit (1/2)? ");
-        int option = sc.nextInt();
+        System.out.print("Is there na initial deposit (y/n)? ");
+        char option = sc.next().charAt(0);
 
         sc.nextLine();
 
-        if (option == 1) {
+        if (option == 'y') {
             System.out.print("Enter initial deposit value: ");
-            saldo = sc.nextDouble();
+            initSaldo = sc.nextDouble();
         }
 
-        Conta cont = new Conta(numberConta, name, saldo); // Iniciando conta
+        Conta cont = new Conta(numberConta, name, initSaldo); // Iniciando conta
 
         // mostrando dados da conta
         System.out.println("numberConta: " + cont.getNumberConta());
