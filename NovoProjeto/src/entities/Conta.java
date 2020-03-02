@@ -35,10 +35,4 @@ public class Conta {
     public void removeSaldo(double balance) {
         this.saldo -= (balance + 5);
     }
-
-    public String toString() {
-        String info = "numberConta: " + numberConta + " Name: " + name + "Saldo Disponivel: "
-                + String.format("%.2f", saldo);
-        return info;
-    }
 }

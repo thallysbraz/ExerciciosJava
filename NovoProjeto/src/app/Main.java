@@ -2,11 +2,9 @@ package app;
 
 import java.util.Locale;
 import java.util.Scanner;
-//import util.*;
 import entities.*;
 
 public class Main {
-
     public static void main(String[] args) {
 
         Locale.setDefault(Locale.US);
@@ -26,7 +24,7 @@ public class Main {
         System.out.print("Enter account holder: ");
         String name = sc.nextLine();
 
-        System.out.print("Is there na initial deposit (y/n)? ");
+        System.out.print("Is there na initial deposit (y/n)?");
         char option = sc.next().charAt(0);
 
         sc.nextLine();
