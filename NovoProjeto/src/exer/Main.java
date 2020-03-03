@@ -2,7 +2,6 @@ package exer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -50,6 +49,9 @@ public class Main {
             System.out.println(name);
         }
 
+        System.out.println("-------------------------------------------");
+        String name = list.stream().filter(x -> x.charAt(0) == 'P').findFirst().orElse(null);
+        System.out.println("Primeiro nome com a letra P: " + name);
         System.out.println("-------------------------------------------");
     }
 
