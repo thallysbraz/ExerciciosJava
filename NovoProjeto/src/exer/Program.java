@@ -19,22 +19,27 @@ public class Program {
         // ler dados iniciais
         for (int i = 0; i < count; i++) {
             System.out.println();
-            System.out.println("Employee #" + i + ": ");
+            System.out.println("Pessoa #" + i + ": ");
             System.out.print("Id: ");
             int id = sc.nextInt();
+
             System.out.print("Name: ");
             sc.nextLine();
             String name = sc.nextLine();
+
             System.out.print("Salary: ");
             double salary = sc.nextDouble();
+            // add pessoa na lista de pessoas
             list.add(new Pessoa(id, name, salary));
         }
-        System.out.println();
+
+        System.out.println(); // print pra limpar a tela
 
         // fazendo calculo de porcentagem do salário
         System.out.print("Enter the employee id that will have salary increase: ");
         int idIncrement = sc.nextInt();
 
+        // fazendo filtro na lista
         Pessoa pes = list.stream().filter(x -> x.getId() == idIncrement).findFirst().orElse(null);
 
         if (pes == null) {
@@ -47,6 +52,7 @@ public class Program {
 
         System.out.println();
         System.out.println("List of employees:");
+
         for (Pessoa obj : list) {
             System.out.println(obj);
         }
